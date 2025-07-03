@@ -1,9 +1,34 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  padding: 24px;
-  margin: 0;
   list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 24px; /* Відстань між зображеннями */
   justify-content: center;
+  align-items: center;
+}
+
+.gallery-item {
+  width: 360px; /* Ширина зображення, як на макеті */
+  height: 200px; /* Висота зображення, як на макеті */
+  overflow: hidden; /* Обрізаємо все, що виходить за межі */
+  position: relative;
+}
+
+.gallery-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Забезпечує, що зображення повністю покриває область, обрізаючи зайве */
+  transition: transform 0.3s ease; /* Додаємо плавний перехід для трансформації */
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1); /* Збільшуємо зображення на 10% при наведенні */
 }
